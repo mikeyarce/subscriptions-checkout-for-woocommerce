@@ -24,15 +24,17 @@
  * Text Domain:       subscriptions-checkout-for-woocommerce
  * Domain Path:       /languages
  */
-
  /**
   * Add the field to the checkout
   */
- add_action( 'woocommerce_after_order_notes', 'scfw_checkout_field' );
+  if ( class_exists( 'Jetpack', false ) ) {
+    $jetpack_active_modules = get_option('jetpack_active_modules');
+    if ( $jetpack_active_modules && in_array( 'subscriptions', $jetpack_active_modules ) ) {
+      add_action( 'woocommerce_after_order_notes', 'scfw_checkout_field' );
+    }
+  }
 
  function scfw_checkout_field( $checkout ) {
-
-     echo '<div id="my_custom_checkout_field"><h2>' . __('My Field', 'subscriptions-checkout-for-woocommerce' ) . '</h2>';
 
      woocommerce_form_field( 'my_field_name', array(
          'type'          => 'checkbox',
