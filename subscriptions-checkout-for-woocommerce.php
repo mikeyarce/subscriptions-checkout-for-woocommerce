@@ -46,3 +46,11 @@
      echo '</div>';
 
  }
+
+add_action( 'woocommerce_checkout_order_processed', 'scfw_process_checkout', 10, 2 );
+
+function scfw_process_checkout( $order_id, $posted ) {
+
+   error_log( print_r( $posted, 1 ) );
+
+  }
