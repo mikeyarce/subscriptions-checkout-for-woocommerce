@@ -46,7 +46,7 @@
 
 add_action( 'woocommerce_checkout_order_processed', 'scfw_process_checkout', 10, 2 );
 
-function scfw_process_checkout( $order_id, $posted ) {
+static function scfw_process_checkout( $order_id, $posted ) {
 
   $checkbox_status = $_POST['scfw_field'];
   $email = $posted['billing_email'];
@@ -56,7 +56,7 @@ error_log( print_r( $checkbox_status, 2 ) );
 error_log( print_r( $email, 3 ) );
 
   if ( $checkbox_status ) {
-    $subscribe = Jetpack_Subscriptions::subscribe( $email );
+    $subscribe = Jetpack_Subscriptions::subscribe( $email, 0, false  );
 
     if ( is_wp_error( $subscribe ) ) {
       // error message
