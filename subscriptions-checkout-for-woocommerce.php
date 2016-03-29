@@ -48,6 +48,9 @@ add_action( 'woocommerce_checkout_order_processed', 'scfw_process_checkout', 10,
 
 function scfw_process_checkout( $order_id, $posted ) {
 
-   error_log( print_r( $posted, 1 ) );
+  $checkbox_status = $_POST['scfw_field'];
+  $email = $posted['billing_email'];
 
-  }
+  error_log( print_r( $posted, $checkbox_status, $email 1 ) );
+
+}
