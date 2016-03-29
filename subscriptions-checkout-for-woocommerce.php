@@ -51,6 +51,9 @@ function scfw_process_checkout( $order_id, $posted ) {
   $checkbox_status = $_POST['scfw_field'];
   $email = $posted['billing_email'];
 
-  error_log( print_r( $posted, $checkbox_status, $email 1 ) );
+error_log( print_r( $posted, 1 ) );
+error_log( print_r( $checkbox_status, 1 ) );
+error_log( print_r( $email, 1 ) );
+
 
 }
