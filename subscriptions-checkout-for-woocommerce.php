@@ -37,8 +37,8 @@
      woocommerce_form_field( 'my_field_name', array(
          'type'          => 'checkbox',
          'class'         => array('my-field-class form-row-wide'),
-         'label'         => __('Send me updates'),
-         'placeholder'   => __('Enter something'),
+         'label'         => __('Send me updates', 'subscriptions-checkout-for-woocommerce'),
+         'placeholder'   => __('Enter something', 'subscriptions-checkout-for-woocommerce'),
          ), $checkout->get_value( 'my_field_name' ));
 
      echo '</div>';
