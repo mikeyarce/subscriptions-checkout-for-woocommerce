@@ -36,12 +36,11 @@
 
  function scfw_checkout_field( $checkout ) {
 
-     woocommerce_form_field( 'my_field_name', array(
+     woocommerce_form_field( 'scfw_field', array(
          'type'          => 'checkbox',
-         'class'         => array('my-field-class form-row-wide'),
+         'class'         => array('scfw_class form-row-wide'),
          'label'         => __('Send me updates', 'subscriptions-checkout-for-woocommerce'),
-         'placeholder'   => __('Enter something', 'subscriptions-checkout-for-woocommerce'),
-         ), $checkout->get_value( 'my_field_name' ));
+         ), $checkout->get_value( 'scfw_field' ));
 
  }
 
