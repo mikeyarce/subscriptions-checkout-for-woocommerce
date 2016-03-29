@@ -43,8 +43,6 @@
          'placeholder'   => __('Enter something', 'subscriptions-checkout-for-woocommerce'),
          ), $checkout->get_value( 'my_field_name' ));
 
-     echo '</div>';
-
  }
 
 add_action( 'woocommerce_checkout_order_processed', 'scfw_process_checkout', 10, 2 );
