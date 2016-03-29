@@ -32,7 +32,7 @@
 
  function scfw_checkout_field( $checkout ) {
 
-     echo '<div id="my_custom_checkout_field"><h2>' . __('My Field') . '</h2>';
+     echo '<div id="my_custom_checkout_field"><h2>' . __('My Field', 'subscriptions-checkout-for-woocommerce' ) . '</h2>';
 
      woocommerce_form_field( 'my_field_name', array(
          'type'          => 'checkbox',
