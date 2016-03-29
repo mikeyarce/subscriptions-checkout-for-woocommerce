@@ -55,5 +55,16 @@ error_log( print_r( $posted, 1 ) );
 error_log( print_r( $checkbox_status, 2 ) );
 error_log( print_r( $email, 3 ) );
 
+  if ( $checkbox_status ) {
+    $subscribe = Jetpack_Subscriptions::subscribe( $email );
+
+    if ( is_wp_error( $subscribe ) ) {
+      // error message
+    } else {
+      // succcess
+    }
+  }
+
+  error_log( print_r( $subscribe , 4 ) );
 
 }
